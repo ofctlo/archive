@@ -1,0 +1,23 @@
+<h1>Boards</h1>
+
+<div id="new_board">
+  <a href="#" id="new_board_link">New board...</a>
+</div>
+
+<h3>My Boards</h3>
+<ul>
+<% _(myBoards).each(function (board) { %>
+  <li>
+    <a href="#/boards/<%= board.escape('id') %>"><%= board.escape('title') %></a>
+  </li>
+<% }); %>
+</ul>
+
+<h3>Shared Boards</h3>
+<ul>
+<% _(sharedBoards).each(function (board) { %>
+  <li>
+    <a href="#/boards/<%= board.escape('id') %>"><%= board.escape('title') %></a>
+  </li>
+<% }); %>
+</ul>

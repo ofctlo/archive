@@ -1,0 +1,20 @@
+#check {
+  margin-right: auto;
+  margin-left: auto;
+  top: 25px;
+  left: 25px;
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  background: #eeeddd;
+  margin-top: 150px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 32pt;
+  border-radius: 3px;
+}
+
+#check:hover {
+  background: #eeeeee;
+  border: 1px solid black;
+}

@@ -1,0 +1,40 @@
+<!-- need the board to have a back button (I think) -->
+<% var board = card.get('list').get('board') %>
+
+<div class="card_background">
+  <div class="card">
+    <div class="card_content">
+      <h2 class="card_title"><%= card.escape('title') %></h2>
+    
+      <div id="description">
+        <% if (card.get('description')) { %>
+          <h5><%= card.escape('description') %></h5>
+          <% }; %>
+        <a id="edit_description_link" href="#">Edit card description...</a>
+      </div>
+      
+      <% if (card.get('due_date')) { %>
+        <div id="due_date">
+          <p>Due date: <%= card.escape('due_date') %></p>
+        </div>
+      <% } %>
+      <div id="checklists"></div>
+    </div>
+  
+    <div class="card_actions">
+      <div id="actions">
+        <div>
+          <a id="card_exit"
+             class="icon-cancel"
+             href="#/boards/<%= board.escape('id') %>"> </a>
+        </div>
+        <br><br>
+        <div>
+          <button id="add_checklist">Add checklist...</button>
+        </div>
+        <div>
+          <button id="add_due_date">Add due date...</button>
+      </div>
+    </div>
+  </div>
+</div>

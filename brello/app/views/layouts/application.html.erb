@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brello</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class="main_header">
+  <% if signed_in? %>
+    <div id="left_header">
+      <ul>
+        <a href="http://github.com/ofctlo/brello">GitHub Repo</a> |
+        <li><a href="#">My Boards</a></li>
+      </ul>
+    </div>
+    <div id="right_header">
+      <span>Welcome, <a href=<%= "#/users/#{current_user.id}" %>><%= current_user.name %></a>!</span>
+      <span>
+        <%= button_to "Sign out", session_url, { method: :delete } %>
+      </span>
+    </div>
+    <div id="clear">
+  <% else %>
+    <div id="left_header">
+      <%= link_to 'Home', root_url %> |
+      <a href="http://github.com/ofctlo/brello">GitHub Repo</a>
+    </div>
+    <div id="right_header">
+      <%= link_to 'Sign up', new_user_url %>
+      <%= link_to 'Sign in', new_session_url %>
+    </div>
+  <% end %>
+</header>
+
+<%= yield %>
+
+</body>
+</html>

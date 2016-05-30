@@ -1,0 +1,21 @@
+// Place all the styles related to the checklists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.checklist {
+  header {
+    * {
+      display: inline-block;
+    }
+    
+    .checklist-delete {
+      margin-left: 10px;
+    }
+  }
+  
+  .checklist_item {
+    line-height: 10px;
+    font-size: 12pt;
+    vertical-align: center;
+  }
+}

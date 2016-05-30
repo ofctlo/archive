@@ -1,0 +1,68 @@
+<% if signed_in? %>
+  <div id="content"></div>
+  <script>
+    $(function () {
+      startBackbone();
+    });
+  </script>
+  <script id="current_user" type="application/bootstrap">
+    <%= current_user.to_json.html_safe %>
+  </script>
+<% else %>
+  <div class="splash">`
+    <div id="splashCarousel" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-target="#splashCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#splashCarousel" data-slide-to="1"></li>
+        <li data-target="#splashCarousel" data-slide-to="2"></li>
+        <li data-target="#splashCarousel" data-slide-to="3"></li>
+      </ol>
+      
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        
+        <div class="active item">
+          <img src="lists.png" width="420" height="420">
+          <div class="image-caption">
+            <p>Create many lists with many cards.</p>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img src="checklist.png" width="420" height="420">
+          <div class="image-caption">
+            <p>Create checklists to keep track of individual steps.</p>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img src="list-sort.png" width="420" height="420">
+          <div class="image-caption">
+            <p>Sort lists by dragging and dropping.</p>
+          </div>
+        </div>
+        
+        <div class="item">
+          <img src="card-sort.png" width="420" height="420">
+          <div class="image-caption">
+            <p>Move cards within lists and from list to list.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#splashCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#splashCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+
+    <h1>Welcome to Brello!</h1>
+    <p>Take notes and keep track of todos</p>
+    
+    <%= button_to "Try for free", users_url, method: :post %>
+  </div>
+  
+  <script>
+    $(function () {
+      $('#splashCarousel').carousel();
+    });
+  </script>
+<% end %>

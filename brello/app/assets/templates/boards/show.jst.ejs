@@ -1,0 +1,47 @@
+<div id="board_bar">
+  <h1 id="board_title"><%= board.escape('title') %></h1>
+  
+  <form id="add_member_form">
+    <label for="member_name">Add member</label>
+    <input type="text" id="member_name" name="membership[user]">
+    <input type="submit">
+  </form>
+  
+  <div id="member_list">
+    <span>Members:</span>
+    <ul>
+      <li class="owner_name member_name">
+        <a href="#/users/<%= board.get('user').escape('id') %>">
+          <% if (board.get('user').get('fname')) { %>
+            <%= board.get('user').escape('fname') %> <%= board.get('user').escape('lname') %>
+          <% } else { %>
+            <%= "Guest" %>
+          <% } %>
+        </a>
+      </li>
+      <% board.get('memberships').each(function (membership) { %>
+        <% var member = membership.get('member'); %>
+        <li class="member_name">
+          <a href="#/users/<%= member.escape('id') %>">
+            <%= member.escape('fname') %> <%= member.escape('lname') %>
+          </a>
+          <a class="member-delete small_x_link"
+             data-id="<%= membership.escape('id') %>" 
+             href="#">x</a>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</div>
+
+<div id="lists" class="list-sortable">
+  <div id="new_list">    
+    <form id="new_list_form">
+      <textarea id="new_list_textarea" name="list[title]"></textarea>
+      <br>
+      <input id="new_list_submit" type="submit" value="Add list">
+      <button class="dismiss_new_list_form">X</button>
+    </form>    
+    
+  </div>
+</div>

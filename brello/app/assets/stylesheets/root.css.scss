@@ -1,0 +1,28 @@
+// Place all the styles related to the root controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.splash {
+  width: 50%;
+  height: 50%;
+  margin: 3% auto 0 auto;
+  text-align: center;
+}
+
+#splashCarousel {
+  margin: 0 auto;
+  width: 420px;
+  height: 480px;
+  border: 2px solid gray;
+  border-radius: 3px;
+}
+
+.image-caption {
+  background: black;
+  color: white;
+  height: 60px;
+  font-size: 12pt;
+  p {
+    line-height: 60px;
+  }
+}

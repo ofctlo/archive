@@ -1,0 +1,30 @@
+<div class="card-sortable cards">
+  <% cards.each(function (card) { %>
+    <div class="card_link"
+        data-list_id="<%= card.escape('list_id') %>"
+        data-id="<%= card.escape('id') %>">
+      <div class="card_title"><%= card.escape('title') %></div>
+    
+      <% if (card.get('due_date')) { %>
+        <span><i class="icon-clock"></i>  <%= card.escape('due_date') %></span>
+      <% } %>
+    
+      <a class="card-delete small_x_link"
+         data-id="<%= card.escape('id') %>" href="#">x</a>
+    </div>
+  <% }); %>
+</div>
+
+<div class="new_card">
+  <!-- Visible at start -->
+  <a class="new_card_link" href="#">New card...</a>
+  
+  <!-- Form is displayed when click on new card link -->
+  <form style="display:none;" class="new_card_form dismissable-form">
+    <textarea name="card[title]"></textarea>
+    <!-- <input type="text" name="card[title]"> -->
+    <br>
+    <input class="new_card_submit" type="submit" value="Add">
+    <button class="dismiss_new_card_form">X</button>
+  </form>
+</div>

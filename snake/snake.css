@@ -1,0 +1,17 @@
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 10px;
+  height: 10px;
+  background: green;
+}
+
+.snake {
+  background: #DDDDDD;
+}
+
+.apple {
+  background: red;
+}

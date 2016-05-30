@@ -1,0 +1,33 @@
+<% var emailHash = md5(user.escape('email')) %>
+<img src=<%= "http://gravatar.com/avatar/" + emailHash + "?s=150"%> 
+     alt="gravatar"
+     class="gravatar"></img>
+<h1><%= user.escape('fname') %> <%= user.escape('lname') %></h1>
+
+<h2><%= user.escape('email') %></h2>
+<br>
+<% if (myBoards.length > 0) { %>
+  <h3>My Boards</h3>
+  <ul>
+    <% _(myBoards).each(function (board) { %>
+      <li>
+        <a href="#/boards/<%= board.escape('id') %>">
+          <%= board.escape('title') %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>
+
+<% if (sharedBoards.length > 0) { %>
+  <h3>Shared With You</h3>
+  <ul>
+    <% _(sharedBoards).each(function (board) { %>
+      <li>
+        <a href="#/boards/<%= board.escape('id') %>">
+          <%= board.escape('title') %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>

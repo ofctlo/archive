@@ -1,0 +1,34 @@
+<header>
+  <h4><%= checklist.escape('title') %></h4>
+  <a class="checklist-delete small_x_link"
+     data-id="<%= checklist.escape('id') %>" href="#">x</a>
+</header>
+
+<!-- All the checklist items -->
+<ul class="checklist_items">
+  <% checklist.get('checklistItems').each(function (item) { %>
+    
+    <!-- A single check item -->
+    <li>
+      <input type="checkbox"
+             class="checkbox"
+             data-checklist_id="<%= item.escape('checklist_id') %>"
+             data-id="<%= item.escape('id') %>"
+             <%= item.get('completed') ? "checked" : "" %>>
+      <span class="checklist_item">
+        <%= item.escape('title') %>
+        <a class="checklist-item-delete small_x_link"
+           data-id="<%= item.escape('id') %>"
+           href="#">x</a>
+      </span>
+    </li>
+  <% }); %>
+  
+  <!-- Form for new check item -->
+  <form class="new_checklist_item_form"
+        data-checklist_id="<%= checklist.escape('id') %>">
+    <textarea name="checklist_item[title]"></textarea>
+    <br>
+    <input type="submit">
+  </form>
+</ul>

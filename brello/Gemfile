@@ -1,0 +1,31 @@
+source 'https://rubygems.org'
+
+gem 'rails', '3.2.13'
+
+ruby '1.9.3'
+
+group :development do
+  gem 'pry-rails'
+  gem 'hirb'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'annotate'
+  gem 'debugger'
+end
+
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+gem 'pg'
+gem 'bcrypt-ruby'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'backbone-on-rails'
+gem 'ejs'
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'bootstrap-sass'
+# gem 'fontello-rails'

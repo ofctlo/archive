@@ -1,0 +1,126 @@
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_list {
+  min-height: 25px;
+}
+
+.list, .dragging_list, #new_list {
+  border: 1px solid black;
+  border-radius: 2px;
+  background: #dddeee;
+  width: 200px;
+  margin: 5px;
+  padding: 5px;
+  
+  box-shadow: 1px 1px 5px 0px #aaa;
+  
+  // came from boards.css
+  display: inline-block;
+  vertical-align: top;
+
+  cursor: all-scroll;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  
+  header {
+    background: #bbbeee;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    
+    span {
+      font-weight: bold;
+      font-size: 16pt;
+      display: inline;
+    }
+  }
+  
+  .list-delete {
+    float: right;
+  }
+  
+  #new_list_form input[type=text] {
+    width: 90%;
+  }
+  
+  .cards {
+    list-style-type: none;
+    
+    .new_card {
+      width: 100%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    
+    .card_link, .dragging_card {
+      position: relative;
+      
+      border: 1px solid #aaaaaa;
+      border-radius: 2px;
+      background: #eeeeee;
+      width: 180px;
+      padding: 6px;
+      margin: 5px;
+      
+      box-shadow: 1px 1px 5px 0px #aaaaaa;
+      
+      cursor: all-scroll;
+      cursor: -webkit-grab;
+      cursor: -moz-grab;
+      
+      .card_title {
+        margin-right: 15px;
+        white-space: normal;
+        font-size: 11pt;
+      }
+      
+      .card-delete {
+        font-size: 12pt;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }
+    }
+  }
+}
+
+.card-sortable {
+  min-height: 30px;
+}
+
+// item being dragged
+.ui-sortable-helper {
+  transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  
+  box-shadow: 0 0 20px 5px gray;
+  
+  // TODO: don't know why this works for the lists but not the cards.
+  // not worth figuring out right now.
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}
+
+.card-dropzone, .list-dropzone {
+  box-shadow: inset 0 0 8px 2px #555;
+}
+
+.card-dropzone {
+  border-radius: 2px;
+  background: gray;
+  height: 30px;
+  margin: 8px;
+  padding: 4px;
+}
+
+.list-dropzone {
+  display: inline-block;
+  border-radius: 2px;
+  background: gray;
+  width: 200px;
+  margin: 5px;
+}
